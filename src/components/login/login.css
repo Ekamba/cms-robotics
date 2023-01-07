@@ -89,3 +89,6 @@
   cursor: pointer;
   text-align: center;
 }
+.form__input .error__message {
+  color: var(--error-message-color);
+}

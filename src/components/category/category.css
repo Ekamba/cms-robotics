@@ -1,0 +1,37 @@
+.category__container {
+  display: flex;
+  flex-direction: column;
+}
+.category__container .inner__category {
+  background-color: var(--yellow-color);
+}
+.category__container .category__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+.category__header .category__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  color: var(--primary-color);
+}
+.category__container .nav__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.inner__category a {
+  color: var(--primary-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}
+.inner__category a.active {
+  list-style: none;
+  text-decoration: none;
+  border-bottom: 5px solid var(--primary-color);
+}

@@ -2,22 +2,26 @@ import { useState } from "react";
 import "./login.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const isValid = username !== null;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isLoading },
+  } = useForm({ mode: "all" });
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username, password);
-    navigate("/category");
+  const submitForm = (data) => {
+    if (data.username || data.password === null) {
+      return "all fields are required";
+    } else {
+      handleSubmit((data) => console.log(data));
+      navigate("/category");
+    }
   };
+
   return (
     <div className="login__container">
       <div className="login__logo">
@@ -29,7 +33,6 @@ const Login = () => {
           />
         </Link>
       </div>
-
       <div className="login__inner__container">
         <div className="login__title">
           <p className="title">Serena at your </p>
@@ -41,32 +44,42 @@ const Login = () => {
           className="retail__img"
         />
         <div className="form__container">
-          <form className="form__input" onSubmit={handleSubmit}>
+          <form className="form__input" onSubmit={submitForm}>
             <p className="form__title">Let's get started!</p>
             <div className="input__container">
               <input
-                type="email"
-                name="email"
+                {...register("username", {
+                  required: "Username must be provided.",
+                  minLength: {
+                    value: 3,
+                    message: "Username must be at least 3 characters long",
+                  },
+                })}
+                type="username"
+                name="username"
                 placeholder="Username"
-                required
                 className="form__input__field"
-                id="email"
-                onChange={(e) => setUsername(e.target.value)}
               />
               <img src="/assets/User_circle.png" alt="user/icon" />
             </div>
+            <p className="error__message">{errors.username?.message}</p>
             <div className="input__container">
               <input
+                {...register("password", {
+                  required: "Password must be provided.",
+                  minLength: {
+                    value: 4,
+                    message: "Password must be at least 3 characters long",
+                  },
+                })}
                 type="password"
                 name="password"
                 placeholder="Password"
-                required
                 className="form__input__field"
-                id="email"
-                onChange={({ target }) => setPassword({ target }.value)}
               />
               <img src="/assets/Key.png" alt="key/icon" />
             </div>
+            <p className="error__message">{errors.password?.message}</p>
             <button className="form__button" type="submit">
               <p>Continue</p>
               <MdOutlineKeyboardArrowRight />
