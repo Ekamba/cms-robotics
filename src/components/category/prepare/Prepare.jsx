@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./prepare.css";
+import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const Prepare = () => {
+  const [show, setShow] = useState(false);
+
+  const toggleModalActive = () => {
+    setShow((prevState) => !prevState);
+  };
+  const toggleModalInactive = () => {};
   return (
     <div className="prepare__container">
-      <div className="prepare prepare__dry">
+      <div onClick={toggleModalActive} className="prepare prepare__dry">
         <img src="/assets/category1.png" alt="dry/good" />
         <p className="prepare__text">Dry Goods</p>
       </div>
@@ -29,6 +37,21 @@ const Prepare = () => {
         alt=""
         className="undraw"
       />
+      {show && (
+        <div className="modal">
+          <div className="inner__modal">
+            <RxCross2 onClick={toggleModalActive} />
+            <p className="selected__text">You have selected</p>
+            <p className="item__name">*Prepare - Frozen*</p>
+            <Link to="/trolleys" className="confirm__btn">
+              Confirm
+            </Link>
+            <button onClick={toggleModalActive} className="cancel__btn">
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

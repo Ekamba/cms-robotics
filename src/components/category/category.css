@@ -29,8 +29,14 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;
+  height: 100%;
 }
 .inner__category a.active {
+  list-style: none;
+  text-decoration: none;
+  border-bottom: 5px solid var(--primary-color);
+}
+.inner__category a.default__active {
   list-style: none;
   text-decoration: none;
   border-bottom: 5px solid var(--primary-color);

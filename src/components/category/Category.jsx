@@ -1,12 +1,18 @@
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./category.css";
 
 const Category = () => {
+  const [active, setActive] = useState("default__active");
+  useEffect(() => {
+    setActive(active);
+  }, [active]);
+
   return (
     <div className="category__container">
       <div className="inner__category">
         <div className="category__header">
-          <p className="category__title">Categories</p>
+          <h1 className="category__title">Categories</h1>
           <img
             src="/assets/COSMIC COBALT logo 1.png"
             alt="app/logo"
@@ -16,7 +22,9 @@ const Category = () => {
         <div className="nav__menu">
           <NavLink
             to="/category/prepare"
-            className={({ isActive }) => (isActive ? "active" : "inactive")}
+            className={({ isActive }) =>
+              isActive ? "active default__active" : "inactive"
+            }
           >
             Prepare
           </NavLink>
@@ -29,7 +37,6 @@ const Category = () => {
         </div>
       </div>
       <Outlet />
-      <div className="footer">footer</div>
     </div>
   );
 };

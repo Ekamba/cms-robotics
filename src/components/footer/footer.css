@@ -1,0 +1,13 @@
+.footer__container {
+  padding-block-start: 1rem;
+  background-color: var(--light-gray-color);
+  border-radius: 1rem;
+}
+.footer__container .icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+img.icon {
+  color: var(--black-color);
+}

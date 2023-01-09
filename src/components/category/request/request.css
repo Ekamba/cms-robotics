@@ -1,4 +1,4 @@
-.prepare__container {
+.request__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 4rem;
@@ -7,7 +7,7 @@
   place-content: center;
   place-items: center;
 }
-.prepare__container .prepare {
+.request__container .request {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,29 +19,29 @@
   border-radius: 24px;
   padding: 1rem;
 }
-.prepare__container .prepare .prepare__text {
+.request__container .request .request__text {
   color: var(--error-message-color);
 }
-.prepare__container .prepare__dry {
+.request__container .request__dry {
   background-color: var(--secondary-color);
 }
-.prepare__container .prepare__electronics {
+.request__container .request__electronics {
   background-color: var(--yellow-color);
 }
-.prepare__container .prepare__fresh {
+.request__container .request__fresh {
   background-color: var(--gray-color);
 }
-.prepare__container .prepare__frozen {
+.request__container .request__frozen {
   background-color: var(--primary-color);
 }
-.prepare__container .prepare__fruits {
+.request__container .request__fruits {
   background-color: var(--yellow-color);
   height: 8rem;
 }
-.prepare__container .undraw {
+.request__container .undraw {
   margin-left: -4rem;
 }
-.prepare__container .modal {
+.request__container .modal {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -51,7 +51,7 @@
   bottom: -200px;
   background: rgba(0, 0, 0, 0.67);
 }
-.prepare__container .modal .inner__modal {
+.request__container .modal .inner__modal {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -79,7 +79,8 @@
 .inner__modal .item__name {
   color: var(--light-gray-color);
 }
-.inner__modal button {
+.inner__modal button,
+.inner__modal a {
   width: 211px;
   height: 43px;
   border-radius: 37px;
@@ -89,6 +90,10 @@
 }
 .inner__modal .confirm__btn {
   background-color: var(--yellow-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-color);
 }
 .inner__modal .cancel__btn {
   background-color: var(--white-color);

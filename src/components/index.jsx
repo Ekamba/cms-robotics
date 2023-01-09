@@ -4,3 +4,6 @@ export { default as Home } from "./home/Home";
 export { default as Login } from "./login/Login";
 export { default as Prepare } from "./category/prepare/Prepare";
 export { default as Request } from "./category/request/Request";
+export { default as Footer } from "./footer/Footer";
+export { default as Prepared } from "./trolleys/prepared/Prepared";
+export { default as Requested } from "./trolleys/requested/Requested";
