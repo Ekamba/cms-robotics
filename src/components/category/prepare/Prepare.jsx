@@ -9,7 +9,7 @@ const Prepare = () => {
   const toggleModalActive = () => {
     setShow((prevState) => !prevState);
   };
-  const toggleModalInactive = () => {};
+
   return (
     <div className="prepare__container">
       <div onClick={toggleModalActive} className="prepare prepare__dry">
@@ -25,7 +25,7 @@ const Prepare = () => {
         <p className="prepare__text">Fresh Goods</p>
       </div>
       <div className="prepare prepare__frozen">
-        <img src="/assets/category4.png" alt="frozen" />
+        <img src="/assets/frozen.png" alt="frozen" />
         <p className="prepare__text">Frozen</p>
       </div>
       <div className="prepare prepare__fruits">

@@ -6,18 +6,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-block: 4rem;
+  gap: 0.5rem;
 }
-.prepared__list .dry__goods {
+.prepared__list .items__box {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
   min-width: 42rem;
-  border-radius: 37px;
+  border-radius: 20px;
   padding-inline: 2rem;
   padding-block: 1rem;
 }
-.dry__goods .left__items {
+.prepared__list .items__box__electronics {
+  background-color: var(--yellow-color);
+}
+.prepared__list .items__box__fresh {
+  background-color: var(--gray-color);
+}
+.prepared__list .items__box__frozen {
+  background-color: var(--green-color);
+}
+.prepared__list .items__box__fruit-veg {
+  background-color: var(--yellow-color);
+}
+.items__box .left__items {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +40,11 @@
   padding: 1rem;
   border-radius: 50%;
 }
+
 .left__items .prepared__text {
   color: var(--white-color);
 }
-.dry__goods .right__items {
+.items__box .right__items {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +61,9 @@
   align-items: center;
   gap: 0.3rem;
   color: var(--red-color);
+}
+.button__items svg {
+  font-size: 2rem;
 }
 .button__items .cancel {
   color: var(--red-color);

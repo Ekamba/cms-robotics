@@ -9,8 +9,9 @@
   --gray-color: #d1d1d1;
   --light-gray-color: #efeeee;
   --red-color: #ff5757;
+  --green-color: #53a865;
   --error-message-color: #af1212;
-  --title-font-size: 2.5rem;
+  --title-font-size: 3rem;
 }
 
 * {

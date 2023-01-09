@@ -34,6 +34,7 @@
 .prepare__container .prepare__frozen {
   background-color: var(--primary-color);
 }
+
 .prepare__container .prepare__fruits {
   background-color: var(--yellow-color);
   height: 8rem;
