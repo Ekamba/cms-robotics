@@ -3,9 +3,9 @@ import "./trolleys.css";
 
 const Trolleys = () => {
   return (
-    <div className="trolley__container">
-      <div className="trolley__header">
-        <h1 className="trolley__title">Trolleys</h1>
+    <div className="trolleys__container">
+      <div className="trolleys__header">
+        <h1 className="trolleys__title">Trolleys</h1>
         <img
           src="/assets/COSMIC COBALT logo 1.png"
           alt="app/logo"

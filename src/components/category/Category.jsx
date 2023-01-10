@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import "./category.css";
 
 const Category = () => {
-  const [active, setActive] = useState("default__active");
+  const [active, setActive] = useState("");
   useEffect(() => {
     setActive(active);
   }, [active]);

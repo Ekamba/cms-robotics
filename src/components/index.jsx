@@ -7,3 +7,5 @@ export { default as Request } from "./category/request/Request";
 export { default as Footer } from "./footer/Footer";
 export { default as Prepared } from "./trolleys/prepared/Prepared";
 export { default as Requested } from "./trolleys/requested/Requested";
+export { default as Robot } from "./robot/Robot";
+export { default as Map } from "./map/Map";

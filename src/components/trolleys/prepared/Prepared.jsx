@@ -10,14 +10,14 @@ const Prepared = () => {
           <div
             className={
               type === "Electronics"
-                ? "items__box items__box__electronics"
+                ? "prepared__item__box prepared__item__box__electronics"
                 : type === "Fresh Goods"
-                ? "items__box items__box__fresh"
+                ? "prepared__item__box prepared__item__box__fresh"
                 : type === "Frozen"
-                ? "items__box items__box__frozen"
+                ? "prepared__item__box prepared__item__box__frozen"
                 : type === "Fruit & Veg"
-                ? "items__box items__box__fruit-veg"
-                : "items__box"
+                ? "prepared__item__box prepared__item__box__fruit-veg"
+                : "prepared__item__box"
             }
           >
             <div className="left__items">
@@ -34,10 +34,10 @@ const Prepared = () => {
               </div>
             </div>
           </div>
-          <div className="Electronics"></div>
+          {/* <div className="electronics"></div>
           <div className="fresh__goods"></div>
           <div className="frozen"></div>
-          <div className="fruits__veg"></div>
+          <div className="fruits__veg"></div> */}
         </div>
       ))}
     </div>

@@ -1,4 +1,9 @@
 .prepared__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   padding-inline: 2rem;
 }
 .prepared__container .prepared__list {
@@ -8,28 +13,28 @@
   justify-content: center;
   gap: 0.5rem;
 }
-.prepared__list .items__box {
+.prepared__list .prepared__item__box {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
-  min-width: 42rem;
+  width: 42rem;
   border-radius: 20px;
   padding-inline: 2rem;
   padding-block: 1rem;
 }
-.prepared__list .items__box__electronics {
+.prepared__list .prepared__item__box__electronics {
   background-color: var(--yellow-color);
 }
-.prepared__list .items__box__fresh {
+.prepared__list .prepared__item__box__fresh {
   background-color: var(--gray-color);
 }
-.prepared__list .items__box__frozen {
+.prepared__list .prepared__item__box__frozen {
   background-color: var(--green-color);
 }
-.prepared__list .items__box__fruit-veg {
+.prepared__list .prepared__item__box__fruit-veg {
   background-color: var(--yellow-color);
 }
-.items__box .left__items {
+.prepared__item__box .left__items {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +49,7 @@
 .left__items .prepared__text {
   color: var(--white-color);
 }
-.items__box .right__items {
+.prepared__item__box .right__items {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,4 +74,28 @@
   color: var(--red-color);
   border: none;
   background: transparent;
+}
+
+@media screen and (min-width: 360px) and (max-width: 784px) {
+  .prepared__list .prepared__item__box {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    width: 20rem;
+  }
+  .prepared__item__box .right__items .item__count {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 800px) {
+  .prepared__list .prepared__item__box {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    width: 42rem;
+  }
+  .prepared__item__box .right__items .item__count {
+    font-size: 25px;
+    font-weight: bold;
+  }
 }

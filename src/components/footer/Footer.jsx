@@ -7,33 +7,31 @@ const Footer = () => {
       <div className="icons">
         <NavLink
           to="/category"
-          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          className={({ isActive }) => (isActive ? "active dote" : "inactive")}
         >
-          <img
-            src="/assets/trolley_icon.png"
-            alt="trolleys"
-            style={{ color: "#000" }}
-          />
+          <img src="/assets/trolleys.png" alt="trolleys" />
+          <span className="dote"></span>
         </NavLink>
         <NavLink
           to="/trolleys"
-          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          className={({ isActive }) => (isActive ? "active dote" : "inactive")}
         >
-          <img src="/assets/add_icon.png" alt="add" style={{ color: "#000" }} />
+          <img src="/assets/add_icon.png" alt="add" />
+          <span className="dote"></span>
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          to="/map"
+          className={({ isActive }) => (isActive ? "active dote" : "inactive")}
         >
-          <img style={{ color: "#000" }} src="/assets/map_icon.png" alt="map" />
+          <img src="/assets/map_icon.png" alt="map" />
+          <span className="dote"></span>
         </NavLink>
         <NavLink
-          className={({ isActive }) => (isActive ? "active" : "inactive")}
+          to="robot"
+          className={({ isActive }) => (isActive ? "active dote" : "inactive")}
         >
-          <img
-            src="/assets/robot_icon.png"
-            alt="robot"
-            style={{ color: "#000" }}
-          />
+          <img src="/assets/robot_icon.png" alt="robot" />
+          <span className="dote"></span>
         </NavLink>
       </div>
     </div>

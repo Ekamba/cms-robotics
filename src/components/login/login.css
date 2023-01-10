@@ -16,7 +16,7 @@
 }
 .login__title .title {
   color: var(--primary-color);
-  font-size: var(--title-font-size);
+  font-size: var(--subtitle-font-size);
   font-weight: bold;
 }
 .login__title span {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./request.css";
 import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const Request = () => {
   const [show, setShow] = useState(false);
@@ -8,7 +9,7 @@ const Request = () => {
   const toggleModalActive = () => {
     setShow((prevState) => !prevState);
   };
-  const toggleModalInactive = () => {};
+
   return (
     <div className="request__container">
       <div onClick={toggleModalActive} className="request request__dry">
@@ -24,7 +25,7 @@ const Request = () => {
         <p className="request__text">Fresh Goods</p>
       </div>
       <div className="request request__frozen">
-        <img src="/assets/category4.png" alt="frozen" />
+        <img src="/assets/frozen.png" alt="frozen" />
         <p className="request__text">Frozen</p>
       </div>
       <div className="request request__fruits">
@@ -42,7 +43,9 @@ const Request = () => {
             <RxCross2 onClick={toggleModalActive} />
             <p className="selected__text">You have selected</p>
             <p className="item__name">*request - Frozen*</p>
-            <button className="confirm__btn">Confirm</button>
+            <Link to="/trolleys" className="confirm__btn">
+              Confirm
+            </Link>
             <button onClick={toggleModalActive} className="cancel__btn">
               Cancel
             </button>
