@@ -22,14 +22,14 @@
   padding-inline: 2rem;
   padding-block: 1rem;
 }
-.prepared__list .prepared__item__box__electronics {
+.prepared__list .prepared__item__box__wineSpritz {
   background-color: var(--yellow-color);
 }
 .prepared__list .prepared__item__box__fresh {
-  background-color: var(--gray-color);
+  background-color: var(--secondary-color);
 }
 .prepared__list .prepared__item__box__frozen {
-  background-color: var(--green-color);
+  background-color: var(--primary-color);
 }
 .prepared__list .prepared__item__box__fruit-veg {
   background-color: var(--yellow-color);
@@ -74,6 +74,10 @@
   color: var(--red-color);
   border: none;
   background: transparent;
+}
+
+.prepared__container .undraw {
+  margin-left: -4rem;
 }
 
 @media screen and (min-width: 360px) and (max-width: 784px) {

@@ -14,7 +14,9 @@
   color: var(--primary-color);
 }
 .trolleys__container .menu__container {
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 50%;
 }
 .trolleys__container .trolleys__menu {

@@ -9,7 +9,7 @@ const Footer = () => {
           to="/category"
           className={({ isActive }) => (isActive ? "active dote" : "inactive")}
         >
-          <img src="/assets/trolleys.png" alt="trolleys" />
+          <img src="/assets/trolley.png" alt="trolley" />
           <span className="dote"></span>
         </NavLink>
         <NavLink

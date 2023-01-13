@@ -22,14 +22,14 @@
 .request__container .request .request__text {
   color: var(--error-message-color);
 }
-.request__container .request__dry {
+.request__container .request__fresh {
   background-color: var(--secondary-color);
 }
-.request__container .request__electronics {
-  background-color: var(--yellow-color);
-}
-.request__container .request__fresh {
+.request__container .request__deli {
   background-color: var(--gray-color);
+}
+.request__container .request__wineSpritz {
+  background-color: var(--secondary-color);
 }
 .request__container .request__frozen {
   background-color: var(--primary-color);

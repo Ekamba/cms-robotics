@@ -1,45 +1,96 @@
 import "./prepared.css";
 import { GiCancel } from "react-icons/gi";
-import { data } from "../data";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Prepared = () => {
+  const trolleyQty = useSelector((state) => state.trolley);
+
+  useEffect(() => {
+    document.title = "Prepared";
+  });
+
   return (
     <div className="prepared__container">
-      {data.map(({ id, imageFile, type, itemCount }) => (
-        <div key={id} className="prepared__list">
-          <div
-            className={
-              type === "Electronics"
-                ? "prepared__item__box prepared__item__box__electronics"
-                : type === "Fresh Goods"
-                ? "prepared__item__box prepared__item__box__fresh"
-                : type === "Frozen"
-                ? "prepared__item__box prepared__item__box__frozen"
-                : type === "Fruit & Veg"
-                ? "prepared__item__box prepared__item__box__fruit-veg"
-                : "prepared__item__box"
-            }
-          >
-            <div className="left__items">
-              <div className="image__box">
-                <img src={imageFile} alt="img" />
-              </div>
-              <p className="prepared__text">{type}</p>
+      <div className="prepared__list">
+        <div className="prepared__item__box prepared__item__box__fresh">
+          <div className="left__items">
+            <div className="image__box">
+              <img src="/assets/freshGoods.png" alt="img" />
             </div>
-            <div className="right__items">
-              <span className="item__count">{itemCount}</span>
-              <div className="button__items">
-                <GiCancel className="cancel" />
-                <button className="cancel">Cancel</button>
-              </div>
+            <p className="prepared__text">Fresh Goods</p>
+          </div>
+          <div className="right__items">
+            <span className="item__count">{trolleyQty.freshGoodQty}</span>
+
+            <div className="button__items">
+              <GiCancel className="cancel" />
+              <button className="cancel">Cancel</button>
             </div>
           </div>
-          {/* <div className="electronics"></div>
-          <div className="fresh__goods"></div>
-          <div className="frozen"></div>
-          <div className="fruits__veg"></div> */}
         </div>
-      ))}
+        <div className="prepared__item__box prepared__item__box__fruit-veg">
+          <div className="left__items">
+            <div className="image__box">
+              <img src="/assets/fruit_Veg.png" alt="img" />
+            </div>
+            <p className="prepared__text">Fruits & Veg</p>
+          </div>
+          <div className="right__items">
+            <span className="item__count">{trolleyQty.fruitsVegQty}</span>
+            <div className="button__items">
+              <GiCancel className="cancel" />
+              <button className="cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div className="prepared__item__box">
+          <div className="left__items">
+            <div className="image__box">
+              <img src="/assets/deli.png" alt="img" />
+            </div>
+            <p className="prepared__text">Deli</p>
+          </div>
+          <div className="right__items">
+            <span className="item__count">{trolleyQty.deliQty}</span>
+            <div className="button__items">
+              <GiCancel className="cancel" />
+              <button className="cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div className="prepared__item__box prepared__item__box__frozen">
+          <div className="left__items">
+            <div className="image__box">
+              <img src="/assets/frozens.png" alt="img" />
+            </div>
+            <p className="prepared__text">Frozen</p>
+          </div>
+          <div className="right__items">
+            <span className="item__count">{trolleyQty.frozenQty}</span>
+
+            <div className="button__items">
+              <GiCancel className="cancel" />
+              <button className="cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div className="prepared__item__box prepared__item__box__wineSpritz">
+          <div className="left__items">
+            <div className="image__box">
+              <img src="/assets/wine_spritz.png" alt="img" />
+            </div>
+            <p className="prepared__text">Wine Spritz</p>
+          </div>
+          <div className="right__items">
+            <span className="item__count">{trolleyQty.wineSpritzQty}</span>
+            <div className="button__items">
+              <GiCancel className="cancel" />
+              <button className="cancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,57 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./request.css";
-import { RxCross2 } from "react-icons/rx";
-import { Link } from "react-router-dom";
 
 const Request = () => {
-  const [show, setShow] = useState(false);
-
-  const toggleModalActive = () => {
-    setShow((prevState) => !prevState);
-  };
+  useEffect(() => {
+    document.title = "Request";
+  });
 
   return (
     <div className="request__container">
-      <div onClick={toggleModalActive} className="request request__dry">
-        <img src="/assets/category1.png" alt="dry/good" />
-        <p className="request__text">Dry Goods</p>
-      </div>
-      <div className="request request__electronics">
-        <img src="/assets/category2.png" alt="electronic" />
-        <p className="request__text">Electronics</p>
-      </div>
       <div className="request request__fresh">
-        <img src="/assets/category3.png" alt="fresh" />
-        <p className="request__text">Fresh Goods</p>
+        <img src="/assets/freshGoods.png" alt="fresh/goods" />
+        <p className="prepare__text">Fresh Goods</p>
+      </div>
+      <div className="request request__fruits">
+        <img src="/assets/fruit_veg.png" alt="fruit" />
+        <p className="prepare__text">Fruit & Veg</p>
+      </div>
+      <div className="request request__deli">
+        <img src="/assets/deli.png" alt="deli" />
+        <p className="prepare__text">Deli</p>
       </div>
       <div className="request request__frozen">
         <img src="/assets/frozen.png" alt="frozen" />
         <p className="request__text">Frozen</p>
       </div>
-      <div className="request request__fruits">
-        <img src="/assets/category5.png" alt="fruit" />
-        <p className="request__text">Fruits & Veg</p>
+      <div className="request request__wineSpritz">
+        <img src="/assets/wine_spritz.png" alt="wineSpritz" />
+        <p className="prepare__text">Wine Spritz</p>
       </div>
       <img
         src="/assets/undraw_gone_shopping_re_2lau 1.png"
         alt=""
         className="undraw"
       />
-      {show && (
-        <div className="modal">
-          <div className="inner__modal">
-            <RxCross2 onClick={toggleModalActive} />
-            <p className="selected__text">You have selected</p>
-            <p className="item__name">*request - Frozen*</p>
-            <Link to="/trolleys" className="confirm__btn">
-              Confirm
-            </Link>
-            <button onClick={toggleModalActive} className="cancel__btn">
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

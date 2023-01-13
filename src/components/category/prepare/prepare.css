@@ -22,14 +22,14 @@
 .prepare__container .prepare .prepare__text {
   color: var(--error-message-color);
 }
-.prepare__container .prepare__dry {
+.prepare__container .prepare__WindSpritz {
   background-color: var(--secondary-color);
 }
-.prepare__container .prepare__electronics {
-  background-color: var(--yellow-color);
+.prepare__container .prepare__deli {
+  background-color: var(--gray-color);
 }
 .prepare__container .prepare__fresh {
-  background-color: var(--gray-color);
+  background-color: var(--secondary-color);
 }
 .prepare__container .prepare__frozen {
   background-color: var(--primary-color);
@@ -47,7 +47,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   top: 0;
   bottom: -200px;
   background: rgba(0, 0, 0, 0.67);
