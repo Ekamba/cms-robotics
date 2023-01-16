@@ -1,42 +1,19 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
 import "./category.css";
+import Zones from "./zones/Zones";
 
 const Category = () => {
-  const [active, setActive] = useState("");
-  useEffect(() => {
-    setActive(active);
-  }, [active]);
-
   return (
     <div className="category__container">
-      <div className="inner__category">
-        <div className="category__header">
-          <h1 className="category__title">Categories</h1>
-          <img
-            src="/assets/COSMIC COBALT logo 1.png"
-            alt="app/logo"
-            className="logo"
-          />
-        </div>
-        <div className="nav__menu">
-          <NavLink
-            to="/category/prepare"
-            className={({ isActive }) =>
-              isActive ? "active default__active" : "inactive"
-            }
-          >
-            Prepare
-          </NavLink>
-          <NavLink
-            to="/category/request"
-            className={({ isActive }) => (isActive ? "active" : "inactive")}
-          >
-            Request
-          </NavLink>
-        </div>
+      <div className="category__header">
+        <img
+          src="/assets/COSMIC COBALT logo 1.png"
+          alt="app/logo"
+          className="logo"
+        />
+        <h1 className="category__title">Add Pending Trolley</h1>
       </div>
-      <Outlet />
+      <h1 className="category__sub__title">Zones</h1>
+      <Zones />
     </div>
   );
 };

@@ -1,36 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
+import PendingTrolley from "./pendingTrolley/PendingTrolley";
 import "./trolleys.css";
 
 const Trolleys = () => {
   return (
     <div className="trolleys__container">
       <div className="trolleys__header">
-        <h1 className="trolleys__title">Trolleys</h1>
         <img
           src="/assets/COSMIC COBALT logo 1.png"
           alt="app/logo"
           className="logo"
         />
+        <h1 className="trolleys__title">Pending Trolleys</h1>
       </div>
-      <div className="menu__container">
-        <div className="trolleys__menu">
-          <NavLink
-            to="/trolleys/prepared"
-            className={({ isActive }) =>
-              isActive ? "active default__active" : "inactive"
-            }
-          >
-            Prepared
-          </NavLink>
-          <NavLink
-            to="/trolleys/requested"
-            className={({ isActive }) => (isActive ? "active" : "inactive")}
-          >
-            Requested
-          </NavLink>
-        </div>
-      </div>
-      <Outlet />
+      <PendingTrolley />
     </div>
   );
 };

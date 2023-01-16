@@ -1,0 +1,43 @@
+import React, { useState } from "react";
+import { RxCross2 } from "react-icons/rx";
+import { Link } from "react-router-dom";
+import { addFreshGoodsToTrolley } from "../../../../features/trolleys/trolleySlice";
+import { useDispatch } from "react-redux";
+import "../zones.css";
+
+const FreshGoods = () => {
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleHideModal = () => {
+    setShow((prevState) => !prevState);
+  };
+
+  return (
+    <div onClick={() => setShow(true)} className="prepare prepare__fresh">
+      <img src="/assets/freshGoods.png" alt="fresh" />
+      <p className="prepare__text">Fresh Goods</p>
+      {show && (
+        <div className="modal">
+          <div className="inner__modal">
+            <RxCross2 onClick={() => setShow(false)} />
+            <p className="selected__text">You have selected</p>
+            <p className="item__name">* Prepare - Fresh Goods*</p>
+            <Link
+              onClick={() => dispatch(addFreshGoodsToTrolley())}
+              to="/trolleys"
+              className="confirm__btn"
+            >
+              Confirm
+            </Link>
+            <button onClick={() => setShow(false)} className="cancel__btn">
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default FreshGoods;

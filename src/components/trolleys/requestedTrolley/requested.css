@@ -1,0 +1,241 @@
+.requested__container {
+  display: flex;
+  flex-direction: column;
+}
+.requested__container .requested__header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-inline: 2rem;
+  padding-block: 3rem;
+}
+.requested__header img {
+  max-width: 4rem;
+  align-self: flex-end;
+}
+.requested__container .requested__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding-block-end: 3rem;
+}
+.requested__list .requested__item__box {
+  display: flex;
+  justify-content: space-between;
+  min-width: 95%;
+  min-height: 13rem;
+  gap: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+.requested__list .requested__item__box__pending {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--yellow-color);
+}
+.requested__list .requested__item__box__inProgress {
+  background-color: var(--green-color);
+}
+.requested__list .requested__item__box__completed {
+  background-color: var(--gray-color);
+}
+.requested__list .requested__item__box__cancelled {
+  background-color: var(--red-color);
+}
+.request__left .image__box {
+  padding: 1rem;
+  border-radius: 50%;
+}
+.request__left .requested__text {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+.requested__item__box .request__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.requested__item__box .request__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-inline-end: 1rem;
+}
+.request__right p {
+  font-size: 2rem;
+}
+.request__right .actions__box {
+  display: flex;
+  gap: 1rem;
+}
+.request__right .trolley__actions p {
+  font-size: 1.5rem;
+}
+.request__right .item__pending {
+  font-size: 36px;
+  color: var(--white-color);
+}
+.request__right .button__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--red-color);
+}
+.button__items svg {
+  font-size: 2rem;
+}
+.button__items .cancel {
+  color: var(--red-color);
+  border: none;
+  background: transparent;
+}
+
+.requested__container .undraw {
+  margin-left: -4rem;
+}
+
+.request__right .cancelBtn {
+  font-size: 2rem;
+  color: var(--red-color);
+}
+.request__right .cancelBtnFrozen {
+  font-size: 2rem;
+  color: var(--white-color);
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  top: -20rem;
+  bottom: -46rem;
+  left: 0;
+  background: rgba(0, 0, 0, 0.67);
+}
+.inner__modal {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 301px;
+  min-height: 222px;
+  left: 42px;
+  top: 267px;
+  background: var(--secondary-color);
+  border-radius: 15px;
+  padding-block-end: 2rem;
+}
+.inner__modal svg {
+  position: relative;
+  left: 8rem;
+  top: 0.5rem;
+  color: var(--white-color);
+  font-size: x-large;
+  cursor: pointer;
+}
+.inner__modal .selected__text {
+  color: var(--gray-color);
+}
+.inner__modal .item__name {
+  color: var(--light-gray-color);
+}
+.inner__modal button {
+  width: 211px;
+  height: 43px;
+  border-radius: 37px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.inner__modal .confirm__btn {
+  background-color: var(--yellow-color);
+}
+.inner__modal .cancel__btn {
+  background-color: var(--white-color);
+}
+
+@media screen and (min-width: 360px) and (max-width: 784px) {
+  .requested__list .requested__item__box {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    width: 42rem;
+  }
+  .requested__item__box .request__right .item__count {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .requested__item__box .request__left {
+    padding-left: -50rem;
+  }
+  .requested__item__box .request__left .requested__text {
+    font-size: 2rem;
+  }
+  .requested__item__box__cancelled,
+  .requested__item__box__completed,
+  .requested__item__box__pending,
+  .requested__item__box__inProgress {
+    display: flex;
+    justify-content: center;
+    padding-left: -1rem;
+  }
+
+  .request__left .requested__text {
+    color: var(--primary-color);
+    font-size: 1rem;
+  }
+}
+.to__where__house {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white-color);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  height: 5rem;
+  width: 5rem;
+  padding-inline: 1rem;
+  font-weight: bold;
+  border-radius: 50%;
+  background: var(--white-color);
+  box-shadow: inset 1px 1px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (min-width: 375px) and (max-width: 1280px) {
+  .modal {
+    bottom: -47.6rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modal {
+    bottom: -25.6rem;
+  }
+}
+@media (min-width: 800px) {
+  .requested__list .requested__item__box {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    width: 42rem;
+  }
+  .requested__item__box .request__right .item__count {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+  .modal {
+    bottom: -16rem;
+  }
+}

@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  statue: [
-    { pending: "pending" },
-    { inProgress: "in progress" },
-    { completed: "completed" },
-    { cancelled: "cancelled" },
-  ],
+  pending: null,
+  inProgress: null,
+  completed: null,
+  cancelled: null,
+
   deliQty: 0,
   wineSpritzQty: 0,
   freshGoodQty: 0,
@@ -18,28 +17,35 @@ const trolleySlice = createSlice({
   name: "trolley",
   initialState,
   reducers: {
-    addDeliToTrolley: (state) => {
-      state.deliQty += 1;
+    addDeliToTrolley(state) {
+      state.deliQty++;
     },
-    addWineSpritzToTrolley: (state) => {
-      state.wineSpritzQty += 1;
+    addFreshGoodsToTrolley(state) {
+      state.freshGoodQty++;
     },
-    addFreshGoodsToTrolley: (state) => {
-      state.freshGoodQty += 1;
+    addWineSpritzToTrolley(state) {
+      state.wineSpritzQty++;
     },
-    addFrozenToTrolley: (state) => {
-      state.frozenQty += 1;
+    addFrozenToTrolley(state) {
+      state.frozenQty++;
     },
-    addFruitsVegToTrolley: (state) => {
-      state.fruitsVegQty += 1;
+    addFruitsVegToTrolley(state) {
+      state.fruitsVegQty++;
     },
-
-    removeToTrolley: (state) => {
-      state.deliQty = 0;
-      state.wineSpritzQty = 0;
-      state.freshGoodQty = 0;
-      state.frozenQty = 0;
-      state.fruitsVegQty = 0;
+    removeFreshFromTrolley(state, action) {
+      state = state.freshGoodQty = 0;
+    },
+    removeDeliFromTrolley(state, action) {
+      state = state.deliQty = 0;
+    },
+    removeFruitVegFromTrolley(state, action) {
+      state = state.fruitsVegQty = 0;
+    },
+    removeWineSpritzFromTrolley(state, action) {
+      state = state.wineSpritzQty = 0;
+    },
+    removeFrozenFromTrolley(state, action) {
+      state = state.frozenQty = 0;
     },
   },
   extraReducers: {},
@@ -51,7 +57,11 @@ export const {
   addFreshGoodsToTrolley,
   addFrozenToTrolley,
   addFruitsVegToTrolley,
-  removeToTrolley,
+  removeFreshFromTrolley,
+  removeDeliFromTrolley,
+  removeFrozenFromTrolley,
+  removeFruitVegFromTrolley,
+  removeWineSpritzFromTrolley,
 } = trolleySlice.actions;
 
 export default trolleySlice.reducer;
