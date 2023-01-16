@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./zones.css";
 import FreshGoods from "./freshGoods/FreshGoods";
 import FruitVeg from "./fruit_veg/Fruit_Veg";
 import Frozen from "./frozen/Frozen";

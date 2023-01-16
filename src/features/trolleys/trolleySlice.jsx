@@ -1,5 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const freshGoodQty =
+  localStorage.getItem("fresh") !== null
+    ? JSON.parse(localStorage.getItem("fresh"))
+    : 0;
+
+const setQty = (freshGoodsQty) => {
+  localStorage.setItem("fresh", JSON.stringify(freshGoodsQty));
+};
+
 const initialState = {
   pending: null,
   inProgress: null,
@@ -8,7 +17,7 @@ const initialState = {
 
   deliQty: 0,
   wineSpritzQty: 0,
-  freshGoodQty: 0,
+  freshGoodQty: freshGoodQty,
   frozenQty: 0,
   fruitsVegQty: 0,
 };
@@ -22,6 +31,7 @@ const trolleySlice = createSlice({
     },
     addFreshGoodsToTrolley(state) {
       state.freshGoodQty++;
+      setQty(state.freshGoodQty);
     },
     addWineSpritzToTrolley(state) {
       state.wineSpritzQty++;
