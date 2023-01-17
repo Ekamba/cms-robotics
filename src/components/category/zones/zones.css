@@ -21,23 +21,27 @@
 }
 .prepare__frozen p {
   color: var(--white-color);
-  font-size: 2rem;
 }
 .prepare__container .prepare__WindSpritz {
   background-color: var(--secondary-color);
+  cursor: pointer;
 }
 .prepare__container .prepare__deli {
   background-color: var(--gray-color);
+  cursor: pointer;
 }
 .prepare__container .prepare__fresh {
   background-color: var(--secondary-color);
+  cursor: pointer;
 }
 .prepare__container .prepare__frozen {
   background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 .prepare__container .prepare__fruits {
   background-color: var(--yellow-color);
+  cursor: pointer;
   height: 8rem;
 }
 .prepare__container .undraw {

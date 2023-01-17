@@ -6,21 +6,21 @@ import { useDispatch } from "react-redux";
 import "../zones.css";
 
 const FreshGoods = () => {
-  const [show, setShow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const handleHideModal = () => {
-    setShow((prevState) => !prevState);
+  const toggleModal = () => {
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
-    <div onClick={() => setShow(true)} className="prepare prepare__fresh">
+    <div onClick={toggleModal} className="prepare prepare__fresh">
       <img src="/assets/freshGoods.png" alt="fresh" />
       <p className="prepare__text">Fresh Goods</p>
-      {show && (
+      {isOpen && (
         <div className="modal">
           <div className="inner__modal">
-            <RxCross2 onClick={() => setShow(false)} />
+            <RxCross2 onClick={() => setIsOpen(false)} />
             <p className="selected__text">You have selected</p>
             <p className="item__name">* Prepare - Fresh Goods*</p>
             <Link
@@ -30,7 +30,7 @@ const FreshGoods = () => {
             >
               Confirm
             </Link>
-            <button onClick={() => setShow(false)} className="cancel__btn">
+            <button onClick={toggleModal} className="cancel__btn">
               Cancel
             </button>
           </div>

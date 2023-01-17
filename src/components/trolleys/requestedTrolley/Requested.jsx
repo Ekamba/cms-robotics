@@ -1,20 +1,33 @@
 import "./requested.css";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+
 import { MdOutlineCancel } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Requested = () => {
-  const [show, setShow] = useState(false);
-  const [style, setStyle] = useState(false);
+  const [showW1, setShowW1] = useState(false);
+  const [showW2, setShowW2] = useState(false);
+  const [styleW1, setStyleW1] = useState(false);
+  const [styleW2, setStyleW2] = useState(false);
 
   useEffect(() => {
     document.title = "Requested Trolley";
   });
 
-  const toggleStyle = () => {
-    setStyle(true);
+  const toggleStyleW1 = () => {
+    setStyleW1((prevState) => !prevState);
+  };
+  const toggleStyleW2 = () => {
+    setStyleW2((prevState) => !prevState);
+  };
+
+  const toggleShow1 = () => {
+    setShowW1((prevState) => !prevState);
+  };
+
+  const toggleShow2 = () => {
+    setShowW2((prevState) => !prevState);
   };
 
   return (
@@ -38,24 +51,80 @@ const Requested = () => {
           <div className="request__right">
             <p>Pending</p>
             <div className="actions__box">
-              {style ? (
+              {styleW1 ? (
                 <p className="to__where__house">W1</p>
               ) : (
-                <div onClick={() => setShow(true)} className="trolley__actions">
+                <div onClick={toggleShow1} className="trolley__actions">
                   <p>W1</p>
                 </div>
               )}
-              <div onClick={() => setShow(true)} className="trolley__actions">
-                <p>W2</p>
+              {showW1 && (
+                <div className="modal">
+                  <div className="inner__modal">
+                    <RxCross2 onClick={toggleShow1} />
+                    <p className="selected__text">
+                      Would you to place a trolley in:"W1"?
+                    </p>
+                    <Link
+                      onClick={() => {
+                        toggleShow1();
+                        toggleStyleW1();
+                      }}
+                      className="confirm__btn"
+                    >
+                      Confirm
+                    </Link>
+                    <button onClick={toggleShow1} className="cancel__btn">
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
+              <div className="action__box">
+                {styleW2 ? (
+                  <p className="to__where__house">W2</p>
+                ) : (
+                  <div onClick={toggleShow2} className="trolley__actions">
+                    <p>W2</p>
+                  </div>
+                )}
+                {showW2 && (
+                  <div className="modal">
+                    <div className="inner__modal">
+                      <RxCross2 onClick={toggleShow2} />
+                      <p className="selected__text">
+                        Would you to place a trolley in:"W2"?
+                      </p>
+                      <Link
+                        onClick={() => {
+                          toggleStyleW2();
+                          toggleShow2();
+                        }}
+                        className="confirm__btn"
+                      >
+                        Confirm
+                      </Link>
+                      <button onClick={toggleShow2} className="cancel__btn">
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-            <MdOutlineCancel className="cancelBtn" onClick={() => setStyle()} />
+            <MdOutlineCancel
+              className="cancelBtn"
+              onClick={() => {
+                setStyleW1(false);
+                setStyleW2(false);
+              }}
+            />
           </div>
         </div>
         <div className="requested__item__box requested__item__box__pending">
           <div className="request__left">
             <div className="image__box">
-              <img src="/assets/fruit_Veg.png" alt="img" />
+              <img src="/assets/fruit_veg.png" alt="img" />
             </div>
             <p className="requested__text">Fruits & Veg</p>
           </div>
@@ -133,28 +202,28 @@ const Requested = () => {
           </div>
         </div>
       </div>
-      {show && (
+      {/* {showW1 && (
         <div className="modal">
           <div className="inner__modal">
-            <RxCross2 onClick={() => setShow(false)} />
+            <RxCross2 onClick={() => setShowW1(false)} />
             <p className="selected__text">
               Would you to place a trolley in:"W1"?
             </p>
             <Link
               onClick={() => {
-                toggleStyle();
-                setShow(false);
+                toggleStyleW1();
+                setShowW1(false);
               }}
               className="confirm__btn"
             >
               Confirm
             </Link>
-            <button onClick={() => setShow(false)} className="cancel__btn">
+            <button onClick={() => setShowW1(false)} className="cancel__btn">
               Cancel
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
