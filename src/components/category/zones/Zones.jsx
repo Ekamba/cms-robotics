@@ -17,13 +17,13 @@ const Zones = () => {
       <Deli />
       <Frozen />
       <WineSpritz />
-      <div className="prepare prepare__undraw">
-        <img
-          className="undraw"
-          src="/assets/undraw_gone_shopping_re_2lau 1.png"
-          alt="undraw"
-        />
-      </div>
+      {/* <div className="prepare prepare__undraw"> */}
+      <img
+        className="undraw"
+        src="/assets/undraw_gone_shopping_re_2lau 1.png"
+        alt="undraw"
+      />
+      {/* </div> */}
     </div>
   );
 };

@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 import "../zones.css";
 
 const FreshGoods = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState();
   const dispatch = useDispatch();
 
   const toggleModal = () => {
-    setIsOpen((prevState) => !prevState);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -20,7 +20,7 @@ const FreshGoods = () => {
       {isOpen && (
         <div className="modal">
           <div className="inner__modal">
-            <RxCross2 onClick={() => setIsOpen(false)} />
+            <RxCross2 onClick={toggleModal} />
             <p className="selected__text">You have selected</p>
             <p className="item__name">* Prepare - Fresh Goods*</p>
             <Link

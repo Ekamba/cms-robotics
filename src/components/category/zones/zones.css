@@ -1,7 +1,6 @@
 .prepare__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column: span 1;
   gap: 3rem;
   padding: 2rem;
   place-content: center;
@@ -21,6 +20,7 @@
 }
 .prepare__frozen p {
   color: var(--white-color);
+  font-size: 2rem;
 }
 .prepare__container .prepare__WindSpritz {
   background-color: var(--secondary-color);
@@ -45,8 +45,8 @@
   height: 8rem;
 }
 .prepare__container .undraw {
-  max-width: 9rem;
-  max-height: 9rem;
+  min-width: 9rem;
+  height: 9rem;
 }
 .prepare__container .prepare__undraw {
   background-color: var(--white-color);

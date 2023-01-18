@@ -8,14 +8,18 @@ const Deli = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
+  const toggleModal = () => {
+    setShow(!show);
+  };
+
   return (
-    <div onClick={() => setShow(true)} className="prepare prepare__deli">
+    <div onClick={toggleModal} className="prepare prepare__deli">
       <img src="/assets/fruit_veg.png" alt="fruit" />
       <p className="prepare__text">Deli</p>
       {show && (
         <div className="modal">
           <div className="inner__modal">
-            <RxCross2 onClick={() => setShow(false)} />
+            <RxCross2 onClick={toggleModal} />
             <p className="selected__text">You have selected</p>
             <p className="item__name">* Prepare - Deli*</p>
             <Link
@@ -25,7 +29,7 @@ const Deli = () => {
             >
               Confirm
             </Link>
-            <button onClick={() => setShow(false)} className="cancel__btn">
+            <button onClick={toggleModal} className="cancel__btn">
               Cancel
             </button>
           </div>

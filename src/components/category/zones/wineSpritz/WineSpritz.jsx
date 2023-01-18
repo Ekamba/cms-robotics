@@ -8,8 +8,12 @@ const WineSpritz = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
 
+  const toggleModal = () => {
+    setShow(!show);
+  };
+
   return (
-    <div onClick={() => setShow(true)} className="prepare prepare__WindSpritz">
+    <div onClick={toggleModal} className="prepare prepare__WindSpritz">
       <img src="/assets/wine_spritz.png" alt="wineSpritz" />
       <p className="prepare__text">Wine Spritz</p>
       {show && (
@@ -25,7 +29,7 @@ const WineSpritz = () => {
             >
               Confirm
             </Link>
-            <button onClick={() => setShow(false)} className="cancel__btn">
+            <button onClick={toggleModal} className="cancel__btn">
               Cancel
             </button>
           </div>
